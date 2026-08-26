@@ -3,89 +3,696 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarQuery Database Connector</title>
+
+    <title>VIN Parts Finder</title>
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #0f172a;
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f1f4f8;
+            color: #1f2937;
         }
+
         .container {
-            width: 100%;
-            max-width: 500px;
+            max-width: 900px;
+            margin: 70px auto;
+            padding: 20px;
+        }
+
+        .card {
             background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 40px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
         }
-        select, button {
-            width: 100%;
-            padding: 0.75rem;
-            margin-top: 0.75rem;
-            border-radius: 6px;
-            border: 1px solid #cbd5e1;
-            font-size: 1rem;
+
+        h1 {
+            text-align: center;
+            margin: 0 0 10px;
+            font-size: 36px;
         }
+
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 35px;
+        }
+
+        .search {
+            display: flex;
+            gap: 12px;
+        }
+
+        #vin {
+            flex: 1;
+            padding: 17px;
+            font-size: 18px;
+            border: 2px solid #d1d5db;
+            border-radius: 10px;
+            outline: none;
+            text-transform: uppercase;
+        }
+
+        #vin:focus {
+            border-color: #1769aa;
+        }
+
         button {
-            background: #0284c7;
-            color: white;
-            font-weight: bold;
+            padding: 17px 28px;
             border: none;
+            border-radius: 10px;
+            background: #1769aa;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
             cursor: pointer;
         }
-        button:hover { background: #0369a1; }
-        .result-box {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: #f1f5f9;
-            border-radius: 6px;
-            font-family: monospace;
-            font-size: 0.9rem;
-            white-space: pre-wrap;
+
+        button:hover {
+            background: #12568c;
+        }
+
+        button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        #status {
+            margin-top: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #vehicle {
             display: none;
+            margin-top: 35px;
+        }
+
+        .vehicle-header {
+            background: #f3f6f9;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .vehicle-title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .vehicle-info {
+            margin-top: 8px;
+            color: #6b7280;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .data-box {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        .label {
+            color: #6b7280;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .value {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        #rawData {
+            display: none;
+            margin-top: 30px;
+            background: #111827;
+            color: #d1d5db;
+            padding: 20px;
+            border-radius: 10px;
+            overflow: auto;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+
+            .card {
+                padding: 25px;
+            }
+
+            .search {
+                flex-direction: column;
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <div class="container">
-    <h2>CarQuery API Live Test</h2>
-    <p style="color: #64748b; font-size: 0.85rem;">Queries years, makes, and models bypassing all browser cross-origin limits.</p>
-   
-    <button onclick="fetchVehicleYears()">Test Connection & Get Years Range</button>
-   
-    <div id="output" class="result-box"></div>
+
+    <div class="card">
+
+        <h1>VIN Parts Finder</h1>
+
+        <div class="subtitle">
+            Enter a VIN to identify the exact vehicle.
+        </div>
+
+        <div class="search">
+
+            <input
+                id="vin"
+                type="text"
+                maxlength="17"
+                placeholder="Enter 17-character VIN"
+                autocomplete="off"
+            >
+
+            <button id="searchButton" onclick="lookupVIN()">
+                Search VIN
+            </button>
+
+        </div>
+
+        <div id="status"></div>
+
+        <div id="vehicle">
+
+            <div class="vehicle-header">
+
+                <div id="vehicleTitle" class="vehicle-title">
+                    Vehicle
+                </div>
+
+                <div id="vehicleInfo" class="vehicle-info">
+                    Vehicle information
+                </div>
+
+            </div>
+
+            <div class="data-grid">
+
+                <div class="data-box">
+                    <div class="label">Make</div>
+                    <div id="make" class="value">—</div>
+                </div>
+
+                <div class="data-box">
+                    <div class="label">Model</div>
+                    <div id="model" class="value">—</div>
+                </div>
+
+                <div class="data-box">
+                    <div class="label">Year</div>
+                    <div id="year" class="value">—</div>
+                </div>
+
+                <div class="data-box">
+                    <div class="label">Engine</div>
+                    <div id="engine" class="value">—</div>
+                </div>
+
+                <div class="data-box">
+                    <div class="label">Vehicle Type ID</div>
+                    <div id="typeId" class="value">—</div>
+                </div>
+
+                <div class="data-box">
+                    <div class="label">Vehicle ID</div>
+                    <div id="vehicleId" class="value">—</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <pre id="rawData"></pre>
+
+    </div>
+
 </div>
 
+
 <script>
-    function fetchVehicleYears() {
-        const output = document.getElementById('output');
-        output.style.display = "block";
-        output.textContent = "Requesting real-time database matrix...";
 
-        // Create a dynamic script tag to force a cross-origin network bypass
-        const script = document.createElement('script');
-       
-        // Define the target endpoint
-        script.src = "https://carqueryapi.com";
-       
-        // Handle direct network routing failures
-        script.onerror = function() {
-            output.textContent = "Network Error: The request was completely blocked before reaching CarQuery servers.";
-        };
+    /*
+    ==========================================================
+    AUTOPARTSAPI SETTINGS
+    ==========================================================
+    */
 
-        document.body.appendChild(script);
+    const API_KEY = "apk_cf9a53eff84a9923052dd52fb076714e9aeba743cd45154c";
+
+    /*
+    IMPORTANT:
+    AutoPartsAPI gives your account a specific base URL.
+
+    It is NOT necessarily:
+    https://auto-parts-catalog.apiprofile.com
+
+    Copy the actual Base URL from your AutoPartsAPI
+    Developer/API settings and put it below.
+    */
+
+    const API_BASE_URL = "auto-parts-catalog.apiprofile.com/api";
+
+
+    /*
+    ==========================================================
+    VIN LOOKUP
+    ==========================================================
+    */
+
+    async function lookupVIN() {
+
+        const vinInput = document.getElementById("vin");
+        const button = document.getElementById("searchButton");
+        const status = document.getElementById("status");
+        const vehicle = document.getElementById("vehicle");
+        const rawData = document.getElementById("rawData");
+
+        const vin = vinInput.value
+            .trim()
+            .toUpperCase();
+
+
+        /*
+        Validate VIN
+        */
+
+        if (vin.length !== 17) {
+
+            status.textContent =
+                "Please enter a 17-character VIN.";
+
+            status.style.color = "red";
+
+            return;
+        }
+
+
+        /*
+        Make sure API settings were entered
+        */
+
+        if (
+            API_KEY === "PUT_YOUR_NEW_API_KEY_HERE" ||
+            API_BASE_URL === "PUT_YOUR_BASE_URL_HERE"
+        ) {
+
+            status.textContent =
+                "AutoPartsAPI settings have not been configured yet.";
+
+            status.style.color = "red";
+
+            return;
+        }
+
+
+        /*
+        Loading state
+        */
+
+        button.disabled = true;
+
+        status.textContent =
+            "Looking up VIN...";
+
+        status.style.color = "#1769aa";
+
+        vehicle.style.display = "none";
+
+        rawData.style.display = "none";
+
+
+        try {
+
+            /*
+            AutoPartsAPI VIN endpoint
+
+            Documentation:
+            /api/vin/tecdoc-vin-check/{vinNo}
+            */
+
+            const url =
+                `${API_BASE_URL}/api/vin/tecdoc-vin-check/${encodeURIComponent(vin)}`;
+
+
+            console.log("Request URL:", url);
+
+
+            const response = await fetch(url, {
+
+                method: "GET",
+
+                headers: {
+                    "x-apiprofile-key": API_KEY,
+                    "Accept": "application/json"
+                }
+
+            });
+
+
+            /*
+            Read response
+            */
+
+            const responseText =
+                await response.text();
+
+
+            console.log(
+                "HTTP Status:",
+                response.status
+            );
+
+            console.log(
+                "API Response:",
+                responseText
+            );
+
+
+            /*
+            Handle API errors
+            */
+
+            if (!response.ok) {
+
+                let message =
+                    `API returned HTTP ${response.status}`;
+
+                try {
+
+                    const errorData =
+                        JSON.parse(responseText);
+
+                    if (errorData.message) {
+                        message =
+                            errorData.message;
+                    }
+
+                } catch {
+                    // Response wasn't JSON
+                }
+
+                throw new Error(message);
+            }
+
+
+            /*
+            Convert response to JSON
+            */
+
+            const data =
+                JSON.parse(responseText);
+
+
+            /*
+            Show raw response while we're building
+            */
+
+            rawData.textContent =
+                JSON.stringify(data, null, 2);
+
+            rawData.style.display = "block";
+
+
+            /*
+            Find vehicle information.
+
+            The exact response structure can vary,
+            so we're checking several common locations.
+            */
+
+            const vehicleData =
+                data.data ||
+                data.vehicle ||
+                data.result ||
+                data;
+
+
+            /*
+            Extract information
+            */
+
+            const make =
+                findValue(
+                    vehicleData,
+                    [
+                        "make",
+                        "manufacturer",
+                        "brand",
+                        "makeName"
+                    ]
+                );
+
+            const model =
+                findValue(
+                    vehicleData,
+                    [
+                        "model",
+                        "modelName"
+                    ]
+                );
+
+            const engine =
+                findValue(
+                    vehicleData,
+                    [
+                        "engine",
+                        "engineName",
+                        "engineDescription"
+                    ]
+                );
+
+            const year =
+                findValue(
+                    vehicleData,
+                    [
+                        "year",
+                        "modelYear",
+                        "productionYear"
+                    ]
+                );
+
+            const typeId =
+                findValue(
+                    vehicleData,
+                    [
+                        "typeId",
+                        "typeID"
+                    ]
+                );
+
+            const vehicleId =
+                findValue(
+                    vehicleData,
+                    [
+                        "vehicleId",
+                        "vehicleID"
+                    ]
+                );
+
+
+            /*
+            Display results
+            */
+
+            document.getElementById("make")
+                .textContent = make || "Not provided";
+
+            document.getElementById("model")
+                .textContent = model || "Not provided";
+
+            document.getElementById("year")
+                .textContent = year || "Not provided";
+
+            document.getElementById("engine")
+                .textContent = engine || "Not provided";
+
+            document.getElementById("typeId")
+                .textContent = typeId || "Not provided";
+
+            document.getElementById("vehicleId")
+                .textContent = vehicleId || "Not provided";
+
+
+            /*
+            Vehicle heading
+            */
+
+            const titleParts = [
+                year,
+                make,
+                model
+            ].filter(Boolean);
+
+            document.getElementById("vehicleTitle")
+                .textContent =
+                titleParts.length
+                    ? titleParts.join(" ")
+                    : "Vehicle Found";
+
+
+            document.getElementById("vehicleInfo")
+                .textContent =
+                engine || "Vehicle identified by VIN";
+
+
+            vehicle.style.display = "block";
+
+
+            status.textContent =
+                "VIN successfully decoded!";
+
+            status.style.color = "green";
+
+
+        } catch (error) {
+
+            console.error(
+                "VIN lookup error:",
+                error
+            );
+
+
+            /*
+            IMPORTANT:
+            "Failed to fetch" usually means the browser
+            couldn't connect to the API at all.
+
+            A 401/403/404 will instead give us
+            an actual HTTP status.
+            */
+
+            if (
+                error instanceof TypeError &&
+                error.message.toLowerCase().includes("fetch")
+            ) {
+
+                status.textContent =
+                    "Failed to fetch. Check the AutoPartsAPI Base URL and CORS settings.";
+
+            } else {
+
+                status.textContent =
+                    error.message;
+
+            }
+
+            status.style.color = "red";
+
+        } finally {
+
+            button.disabled = false;
+
+        }
+
     }
 
-    // This handles the payload data returning from the script tag securely
-    window.handleApiResponse = function(data) {
-        const output = document.getElementById('output');
-        output.textContent = "Data Received Successfully:\n\n" + JSON.stringify(data, null, 2);
-    };
+
+    /*
+    ==========================================================
+    HELPER
+    ==========================================================
+    */
+
+    function findValue(object, possibleNames) {
+
+        if (!object || typeof object !== "object") {
+            return null;
+        }
+
+
+        /*
+        Check direct properties first
+        */
+
+        for (const name of possibleNames) {
+
+            if (
+                object[name] !== undefined &&
+                object[name] !== null &&
+                object[name] !== ""
+            ) {
+
+                return object[name];
+
+            }
+
+        }
+
+
+        /*
+        Recursively search nested objects
+        */
+
+        for (const key of Object.keys(object)) {
+
+            const value = object[key];
+
+
+            if (
+                value &&
+                typeof value === "object" &&
+                !Array.isArray(value)
+            ) {
+
+                const result =
+                    findValue(
+                        value,
+                        possibleNames
+                    );
+
+                if (result !== null) {
+                    return result;
+                }
+
+            }
+
+        }
+
+
+        return null;
+
+    }
+
+
+    /*
+    Allow ENTER key to search
+    */
+
+    document
+        .getElementById("vin")
+        .addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Enter") {
+                    lookupVIN();
+                }
+
+            }
+        );
+
 </script>
 
 </body>
