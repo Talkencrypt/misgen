@@ -1,509 +1,781 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Misgen Auto Parts - Home</title>
- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misgen Auto Parts - Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
 </head>
 
 <body>
 
- <header>
- <ul>
- <li class="active">
- <a class="active" href="./Index.html">Home</a>
- </li>
- <li>
- <a href="./Contact.html">Contact</a>
- </li>
- <li>
- <a href="https://maps.app.goo.gl/ksQsTseVc8YKjJ5J7">Directions</a>
- </li>
- </ul>
- <div class="Search">
- <p class="search-bar"><span class="material-symbols-outlined"> search </span></p>
- <p contenteditable="true" id="myEditable" class="search"></p>
- </div>
- </header>
-
- <div class="hero-image-block">
- <img src="https://s3-media0.fl.yelpcdn.com/bphoto/kTTbKh1AG2Lltc4GPIEJnw/l.jpg" alt="Hero Image">
- <div class="hero-overlay">
- <div class="hero-text-box">
- <h1>Misgen Auto Parts</h1>
- <h2>Family Owned And Operated Since 1972</h2>
- </div>
- </div>
- </div>
-
- <div class="banner">
- <center>
- <h1>Welcome To Misgen Auto Parts</h1>
- </center>
- <p style="padding-left:20%; padding-right:20%; line-height:2; color: #121212;">Misgen Auto Parts has been serving the community since 1972. We are pleased to be your single source for u-pull services, aftermarket parts, auto recycling, and we have a great selection of used vehicles. If you are in the area, you may stop by our location in Ellendale, Minnesota, to our U-Pull yard to find the part you have been searching for. With our Parts Search software, we can help you find that hard to find the part and have it shipped directly to you. Our recycling services help you clean out the garage and get rid of unwanted vehicles. We provide used and like-new vehicles, so stop by our location today and find what you are looking for. Feel free to call us at 800-358-4902 for more information.</p>
- </div>
-
- <main class="main-content">
- <!-- Section 1 -->
- <div class="section">
- <img src="https://irp.cdn-website.com//42b6dde4/dms3rep/multi/opt/upull-330w.jpg" alt="U-Pull Parts">
- <div class="text-block">
- <h2>U-Pull Parts</h2>
- <p>Please bring your tools and pull the parts you want from our U-pull section. The U-pull has the cars and trucks you drive and fix, mainly ten years old and older.</p>
- </div>
- </div>
-
- <!-- Section 2 -->
- <div class="section">
- <div class="text-block">
- <h2>Parts Search</h2>
- <p>Our warehouse and late-model section have thousands of inventoried parts that you can search online. We remove the parts for you to pick up here or to ship to you.</p>
- </div>
- <img src="https://irp.cdn-website.com//42b6dde4/dms3rep/multi/opt/parts-search-330w.jpg" alt="Parts Search">
- </div>
-
- <!-- Section 3 -->
- <div class="section">
- <img src="https://irp.cdn-website.com//42b6dde4/dms3rep/multi/opt/recycling-330w.jpg" alt="Recycling">
- <div class="text-block">
- <h2>Recycling</h2>
- <p>We want your dented, rusted, and worn-out cars and trucks. We pay based on quality and parts value. Towing service is also available.</p>
- </div>
- </div>
-
- <!-- Section 4 -->
- <div class="section">
- <div class="text-block">
- <h2>For Sale</h2>
- <p>We have a variety of cars and trucks For Sale at our location in Ellendale, Minnesota. Please stop by to see our inventory or browse our great selection here.</p>
- </div>
- <img src="https://irp.cdn-website.com//42b6dde4/dms3rep/multi/opt/sale-330w.jpg" alt="For Sale">
- </div>
- </main>
-
- <!-- Synced Formspree Footer Component -->
- <footer class="footer-container">
- <!-- Column 1: Contact Form -->
- <div class="footer-column">
- <h3>CONTACT US</h3>
- <!-- Remember to swap 'your_unique_id' with your actual formspree dashboard token -->
- <form action="https://formspree.io" method="POST" class="contact-form">
- <div class="form-group">
- <input type="text" name="name" placeholder="Your Name" required>
- </div>
- <div class="form-group">
- <input type="email" name="_replyto" placeholder="Your Email Address" required>
- </div>
- <div class="form-group">
- <textarea name="message" rows="4" placeholder="How can we help you?" required></textarea>
- </div>
- <button type="submit">Send Message</button>
- </form>
- </div>
-
- <!-- Column 2: Detailed Business Contact Card -->
- <div class="footer-column contact-info">
- <h3>CONTACT INFORMATION</h3>
- <p><strong>Phone:</strong> 800-358-4902 | 507-684-2100</p>
- <p><strong>Email:</strong> <a href="mailto:b.misgen@misgen.com">b.misgen@misgen.com</a></p>
- <p><strong>Address:</strong> 12880 SW 72nd Ave. Ellendale, MN 56026</p>
- <p class="meta-tags">Licensed | Bonded | Insured</p>
-
- <div class="hours-block">
- <!-- Added a live-status span right next to the heading -->
- <p><strong>Business Hours:</strong> <span id="live-status" class="status-badge">Checking...</span></p>
- <div class="hours-row"><span>Mon - Fri</span><span>8:00 am - 5:00 pm</span></div>
- <div class="hours-row"><span>Sat - Sun</span><span>Closed</span></div>
- </div>
-
-
- <div class="payment-methods">
- <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/visa.png" alt="Accepted Payments">
- <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/mastercard.png" alt="Accepted Payments">
- <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/discover.png" alt="Accepted Payments">
- <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/amex.png" alt="Accepted Payments">
- <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/paypal.png" alt="Accepted Payments">
- <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/cash.png" alt="Accepted Payments">
- </div>
- </div>
-
- <!-- Column 3: Live Interactive Map Embed -->
- <div class="footer-column map-column">
- <h3>OUR LOCATION</h3>
- <div class="map-wrapper">
- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2560.2385143838305!2d-93.3497141!3d43.9044371!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f6cf0989839733%3A0x4c6ef43d820b8cc1!2sMisgen%20Auto%20Parts!5e1!3m2!1sen!2sus!4v1786896472151!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
- </iframe>
- </div>
- </div>
- </footer>
-
- <style>
- body {
- background: #0D1513;
- margin: 0;
- padding: 0;
- font-family: sans-serif;
- }
-
- header {
- position: sticky;
- top: 0;
- left: 0;
- width: 100%;
- z-index: 100;
- display: flex;
- justify-content: center;
- }
-
- .hero-image-block {
- position: relative;
- width: 100vw;
- height: 100vh;
- overflow: hidden;
- margin-top: -95px;
- }
-
- .hero-image-block img {
- width: 100%;
- height: 100%;
- object-fit: cover;
- }
-
- .hero-overlay {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- display: flex;
- justify-content: center;
- align-items: center;
- }
-
- .hero-text-box {
- border: 2px solid #ffffff;
- padding: 40px 60px;
- text-align: center;
- color: #ffffff;
- max-width: 80%;
- }
-
- .hero-text-box h1 {
- font-size: 3rem;
- margin-bottom: 20px;
- }
-
- .main-content {
- padding: 40px 20px 100px 20px;
- color: #ffffff;
- }
-
- .banner {
- padding: 40px 20px;
- background: #FFFFFF;
- height: fit-content;
- }
-
- ul {
- background: #D1E7DD;
- border-radius: 50px;
- width: fit-content;
- padding-right: 40px;
- margin-top: 14px;
- }
-
- .Search {
- background: #D1E7DD;
- border-radius: 100%;
- width: fit-content;
- padding: 23px;
- height: 20px;
- margin-top: 14px;
- margin-left: 20px;
- display: flex;
- justify-content: center;
- align-items: center;
- }
-
- .Search:hover {
- background: #D1E7DD;
- border-radius: 35px;
- width: fit-content;
- padding: 23px;
- height: 20px;
- }
-
- .Search:hover p.search {
- display: block;
- padding: 0px;
- border-color: #121212;
- border-bottom-style: groove;
- }
-
- [contenteditable="true"]:focus {
- outline: none;
- border: none;
- }
-
- li {
- font-size: 20px;
- display: inline-block;
- padding-left: 20px;
- padding-top: 20px;
- padding-bottom: 20px;
- }
-
- .active {
- padding: 0px;
- border-color: #121212;
- border-bottom-style: groove;
- }
-
- a {
- color: black;
- text-decoration: none;
- }
-
- a:hover {
- padding: 0px;
- border-color: #464646;
- border-bottom-style: groove;
- Use code with caution.color: #464646;
- }
-
- .search-bar {
- padding: 0px;
- display: flex;
- margin: 0;
- }
-
- .search {
- margin: 0;
- margin-left: 5px;
- display: none;
- }
-
- .search:empty::before {
- content: "Search...";
- color: #000000;
- }
-
- .section {
- display: flex;
- gap: 50px;
- align-items: center;
- margin: 8% 15% 0% 15%;
- }
-
- .section img {
- width: 330px;
- height: auto;
- border-radius: 4px;
- object-fit: cover;
- }
-
- .text-block {
- display: flex;
- flex-direction: column;
- gap: 12px;
- flex: 1;
- }
-
- .text-block h2 {
- margin: 0;
- font-size: 1.8rem;
- }
-
- .text-block p {
- margin: 0;
- line-height: 1.6;
- color: #cbd5e1;
- }
-
- /* Combined Footer CSS Rules Rules */
- .footer-container {
- background-color: #051424;
- color: #ffffff;
- padding: 60px 40px;
- display: flex;
- flex-wrap: wrap;
- gap: 40px;
- justify-content: space-between;
- border-top: 1px solid #1a314d;
- }
-
- .footer-column {
- flex: 1;
- min-width: 280px;
- }
-
- .footer-column h3 {
- font-size: 1.1rem;
- letter-spacing: 1px;
- margin-bottom: 25px;
- color: #ffffff;
- border-bottom: 1px solid #1e3a5f;
- padding-bottom: 10px;
- }
-
- .contact-form {
- display: flex;
- flex-direction: column;
- gap: 15px;
- }
-
- .form-group input,
- .form-group textarea {
- width: 100%;
- padding: 12px;
- background-color: #0c223c;
- border: 1px solid #1e3a5f;
- border-radius: 4px;
- color: #ffffff;
- font-size: 0.95rem;
- box-sizing: border-box;
- }
-
- .form-group input::placeholder,
- .form-group textarea::placeholder {
- color: #728aa1;
- }
-
- .form-group input:focus,
- .form-group textarea:focus {
- outline: none;
- border-color: #3b82f6;
- }
-
- .contact-form button {
- background-color: #2563eb;
- color: white;
- border: none;
- padding: 12px 20px;
- font-size: 1rem;
- font-weight: bold;
- border-radius: 4px;
- cursor: pointer;
- transition: background 0.2s ease-in-out;
- }
-
- .contact-form button:hover {
- background-color: #1d4ed8;
- }
-
- .contact-info p {
- font-size: 0.95rem;
- line-height: 1.6;
- margin: 12px 0;
- color: #cbd5e1;
- }
-
- .contact-info a {
- color: #3b82f6;
- text-decoration: none;
- }
-
- .contact-info a:hover {
- text-decoration: underline;
- }
-
- .meta-tags {
- font-style: italic;
- color: #94a3b8;
- }
-
- .hours-block {
- margin-top: 20px;
- }
-
- .hours-row {
- display: flex;
- justify-content: space-between;
- max-width: 250px;
- font-size: 0.9rem;
- margin-bottom: 6px;
- color: #cbd5e1;
- }
-
- .payment-methods {
- margin-top: 25px;
- }
-
- .map-wrapper {
- box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
- border-radius: 4px;
- overflow: hidden;
- }
-
- .status-badge {
- font-size: 0.85rem;
- font-weight: bold;
- padding: 3px 8px;
- border-radius: 12px;
- margin-left: 8px;
- text-transform: uppercase;
- }
-
- /* Green design block when open */
- .status-badge.open {
- background-color: #157347;
- color: #ffffff;
- }
-
- /* Red design block when closed */
- .status-badge.closed {
- background-color: #bb2d3b;
- color: #ffffff;
- }
- </style>
- <script>
-function updateBusinessStatus() {
- const statusElement = document.getElementById('live-status');
- if (!statusElement) return;
-
- // Fetch the live local date string customized to Minnesota Central Time Zone
- const mnTimeStr = new Date().toLocaleString("en-US", {timeZone: "America/Chicago"});
- const mnDate = new Date(mnTimeStr);
-
- const currentDay = mnDate.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
- const currentHours = mnDate.getHours();
- const currentMinutes = mnDate.getMinutes();
- 
- // Convert time into minutes from midnight for simpler math logic
- const totalMinutes = (currentHours * 60) + currentMinutes;
- const openTime = 8 * 60; // 8:00 AM in minutes
- const closeTime = 17 * 60; // 5:00 PM in minutes
-
- // Business Schedule check: Monday (1) through Friday (5)
- if (currentDay >= 1 && currentDay <= 5) {
- if (totalMinutes >= openTime && totalMinutes < closeTime) {
- statusElement.textContent = "Open Now";
- statusElement.className = "status-badge open";
- } else {
- statusElement.textContent = "Closed";
- statusElement.className = "status-badge closed";
- }
- } else {
- // Weekend Schedule: Saturday (6) and Sunday (0) are closed
- statusElement.textContent = "Closed";
- statusElement.className = "status-badge closed";
- }
-}
-
-// Run the script instantly on load, then auto-refresh every 30 seconds
-updateBusinessStatus();
-setInterval(updateBusinessStatus, 30000);
-
-  const editable = document.getElementById('myEditable');
-
-editable.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    event.preventDefault(); 
-    window.location.href = '404.html';
-  }
-});
- </script>
-  
+    <header>
+
+        <ul>
+
+            <li>
+                <a class="main" style="margin-right:20px;" href="./Index.html">
+                    Home
+                </a>
+            </li>
+
+
+            <li>
+                <a class="main" href="./Contact.html">
+                    Contact
+                </a>
+            </li>
+
+
+            <li>
+                <a style="padding-left:20px;" class="main" href="https://maps.app.goo.gl/ksQsTseVc8YKjJ5J7">
+                    Directions
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- VIN / Parts Lookup Button -->
+
+        <a href="./PartsLookup.html" class="Search" aria-label="Vehicle Parts Lookup">
+
+            <span class="material-symbols-outlined">
+                search
+            </span>
+
+        </a>
+
+    </header>
+
+    <div class="hero-image-block">
+        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/kTTbKh1AG2Lltc4GPIEJnw/l.jpg" alt="Hero Image">
+        <div class="hero-overlay">
+            <div class="hero-text-box">
+                <h1>Misgen Auto Parts</h1>
+                <h2>Family Owned And Operated Since 1972</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <center>
+            <h1>Welcome To Misgen Auto Parts</h1>
+        </center>
+        <p style="padding-left:20%; padding-right:20%; line-height:2; color: #121212;">Misgen Auto Parts has been serving the community since 1972. We are pleased to be your single source for u-pull services, aftermarket parts, auto recycling, and we have a great selection of used vehicles. If you are in the area, you may stop by our location in Ellendale, Minnesota, to our U-Pull yard to find the part you have been searching for. With our Parts Search software, we can help you find that hard to find the part and have it shipped directly to you. Our recycling services help you clean out the garage and get rid of unwanted vehicles. We provide used and like-new vehicles, so stop by our location today and find what you are looking for. Feel free to call us at 800-358-4902 for more information.</p>
+    </div>
+
+    <main class="main-content">
+        <!-- Section 1 -->
+        <div class="section">
+            <img src="https://irp.cdn-website.com//42b6dde4/dms3rep/multi/opt/upull-330w.jpg" alt="U-Pull Parts">
+            <div class="text-block">
+                <h2>U-Pull Parts</h2>
+                <p>Please bring your tools and pull the parts you want from our U-pull section. The U-pull has the cars and trucks you drive and fix, mainly ten years old and older.</p>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <div class="text-block">
+                <h2>Parts Search</h2>
+                <p>Our warehouse and late-model section have thousands of inventoried parts that you can search online. We remove the parts for you to pick up here or to ship to you.</p>
+            </div>
+            <img src="https://irp.cdn-website.com//42b6dde4/dms3rep/multi/opt/parts-search-330w.jpg" alt="Parts Search">
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <img src="https://irp.cdn-website.com//42b6dde4/dms3rep/multi/opt/recycling-330w.jpg" alt="Recycling">
+            <div class="text-block">
+                <h2>Recycling</h2>
+                <p>We want your dented, rusted, and worn-out cars and trucks. We pay based on quality and parts value. Towing service is also available.</p>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section">
+            <div class="text-block">
+                <h2>For Sale</h2>
+                <p>We have a variety of cars and trucks For Sale at our location in Ellendale, Minnesota. Please stop by to see our inventory or browse our great selection here.</p>
+            </div>
+            <img src="https://irp.cdn-website.com//42b6dde4/dms3rep/multi/opt/sale-330w.jpg" alt="For Sale">
+        </div>
+    </main>
+
+    <!-- Synced Formspree Footer Component -->
+    <footer class="footer-container">
+        <!-- Column 1: Contact Form -->
+        <div class="footer-column">
+            <h3>CONTACT US</h3>
+            <!-- Remember to swap 'your_unique_id' with your actual formspree dashboard token -->
+            <form action="https://formspree.io/f/xgaewbrw" method="POST" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="_replyto" placeholder="Your Email Address" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="4" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Column 2: Detailed Business Contact Card -->
+        <div class="footer-column contact-info">
+            <h3>CONTACT INFORMATION</h3>
+            <p><strong>Phone:</strong> 800-358-4902 | 507-684-2100</p>
+            <p><strong>Email:</strong> <a href="mailto:b.misgen@misgen.com">b.misgen@misgen.com</a></p>
+            <p><strong>Address:</strong> 12880 SW 72nd Ave. Ellendale, MN 56026</p>
+            <p class="meta-tags">Licensed | Bonded | Insured</p>
+
+            <div class="hours-block">
+                <!-- Added a live-status span right next to the heading -->
+                <p><strong>Business Hours:</strong> <span id="live-status" class="status-badge">Checking...</span></p>
+                <div class="hours-row"><span>Mon - Fri</span><span>8:00 am - 5:00 pm</span></div>
+                <div class="hours-row"><span>Sat - Sun</span><span>Closed</span></div>
+            </div>
+
+
+            <div class="payment-methods">
+                <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/visa.png" alt="Accepted Payments">
+                <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/mastercard.png" alt="Accepted Payments">
+                <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/discover.png" alt="Accepted Payments">
+                <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/amex.png" alt="Accepted Payments">
+                <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/paypal.png" alt="Accepted Payments">
+                <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/cash.png" alt="Accepted Payments">
+            </div>
+        </div>
+
+        <!-- Column 3: Live Interactive Map Embed -->
+        <div class="footer-column map-column">
+            <h3>OUR LOCATION</h3>
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2560.2385143838305!2d-93.3497141!3d43.9044371!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f6cf0989839733%3A0x4c6ef43d820b8cc1!2sMisgen%20Auto%20Parts!5e1!3m2!1sen!2sus!4v1786896472151!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        body {
+            background: #0D1513;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image-block {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            margin-top: -95px;
+        }
+
+        .hero-image-block img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-text-box {
+            border: 2px solid #ffffff;
+            padding: 40px 60px;
+            text-align: center;
+            color: #ffffff;
+            max-width: 80%;
+        }
+
+        .hero-text-box h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .main-content {
+            padding: 40px 20px 100px 20px;
+            color: #ffffff;
+        }
+
+        .banner {
+            padding: 40px 20px;
+            background: #FFFFFF;
+            height: fit-content;
+        }
+
+        ul {
+            background: #D1E7DD;
+            border-radius: 50px;
+            width: fit-content;
+            padding-right: 40px;
+            margin-top: 14px;
+        }
+
+        .Search {
+            background: #D1E7DD;
+            border-radius: 100%;
+            width: fit-content;
+            padding: 23px;
+            height: 20px;
+            margin-top: 14px;
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Search:hover {
+            background: #D1E7DD;
+            border-radius: 35px;
+            width: fit-content;
+            padding: 23px;
+            height: 20px;
+        }
+
+        .Search:hover p.search {
+            display: block;
+            padding: 0px;
+            border-color: #121212;
+            border-bottom-style: groove;
+        }
+
+        [contenteditable="true"]:focus {
+            outline: none;
+            border: none;
+        }
+
+        li {
+            font-size: 20px;
+            display: inline-block;
+            padding-left: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .active {
+            padding: 0px;
+            border-color: #121212;
+            border-bottom-style: groove;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            padding: 0px;
+            border-color: #464646;
+            border-bottom-style: groove;
+            Use code with caution.color: #464646;
+        }
+
+        .search-bar {
+            padding: 0px;
+            display: flex;
+            margin: 0;
+        }
+
+        .search {
+            margin: 0;
+            margin-left: 5px;
+            display: none;
+        }
+
+        .search:empty::before {
+            content: "Search...";
+            color: #000000;
+        }
+
+        .section {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            margin: 8% 15% 0% 15%;
+        }
+
+        .section img {
+            width: 330px;
+            height: auto;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .text-block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .text-block h2 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .text-block p {
+            margin: 0;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+
+        /* Combined Footer CSS Rules Rules */
+        .footer-container {
+            background-color: #051424;
+            color: #ffffff;
+            padding: 60px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+            border-top: 1px solid #1a314d;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            color: #ffffff;
+            border-bottom: 1px solid #1e3a5f;
+            padding-bottom: 10px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: #0c223c;
+            border: 1px solid #1e3a5f;
+            border-radius: 4px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #728aa1;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .contact-form button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s ease-in-out;
+        }
+
+        .contact-form button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .contact-info p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 12px 0;
+            color: #cbd5e1;
+        }
+
+        .contact-info a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .meta-tags {
+            font-style: italic;
+            color: #94a3b8;
+        }
+
+        .hours-block {
+            margin-top: 20px;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            max-width: 250px;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            color: #cbd5e1;
+        }
+
+        .payment-methods {
+            margin-top: 25px;
+        }
+
+        .map-wrapper {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .status-badge {
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 12px;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Green design block when open */
+        .status-badge.open {
+            background-color: #157347;
+            color: #ffffff;
+        }
+
+        /* Red design block when closed */
+        .status-badge.closed {
+            background-color: #bb2d3b;
+            color: #ffffff;
+        }
+
+        @media (max-width:768px) {
+            * {
+                box-sizing: border-box
+            }
+
+            html,
+            body {
+                width: 100%;
+                overflow-x: hidden
+            }
+
+            header {
+                padding: 8px 10px;
+                align-items: center;
+                background: rgba(13, 21, 19, .96)
+            }
+
+            header ul {
+                margin: 0;
+                padding: 0 8px;
+                max-width: calc(100% - 55px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 2px;
+                flex: 1
+            }
+
+            header li {
+                display: block;
+                padding: 10px 6px;
+                font-size: 14px;
+                white-space: nowrap
+            }
+
+            header li a.main {
+                margin-right: 0 !important;
+                padding: 0 5px !important
+            }
+
+            header li a[style] {
+                padding-left: 5px !important
+            }
+
+            .Search {
+                flex: 0 0 42px;
+                width: 42px;
+                height: 42px;
+                padding: 0;
+                margin: 0 0 0 7px
+            }
+
+            .Search:hover {
+                width: 42px;
+                height: 42px;
+                padding: 0;
+                border-radius: 100%
+            }
+
+            .hero-image-block {
+                width: 100%;
+                height: 62vh;
+                min-height: 420px;
+                margin-top: 0
+            }
+
+            .hero-text-box {
+                width: calc(100% - 32px);
+                max-width: none;
+                padding: 24px 16px
+            }
+
+            .hero-text-box h1 {
+                font-size: clamp(2rem, 9vw, 3rem);
+                line-height: 1.1;
+                margin: 0 0 12px
+            }
+
+            .hero-text-box h2 {
+                font-size: clamp(1rem, 4.5vw, 1.4rem);
+                line-height: 1.35;
+                margin: 0
+            }
+
+            .banner {
+                padding: 30px 18px
+            }
+
+            .banner h1 {
+                font-size: clamp(1.7rem, 7vw, 2.3rem);
+                line-height: 1.2
+            }
+
+            .banner p {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                line-height: 1.7 !important
+            }
+
+            .main-content {
+                padding: 25px 16px 65px
+            }
+
+            .section,
+            .section:nth-child(even) {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                margin: 55px 0 0;
+                align-items: stretch
+            }
+
+            .section:first-child {
+                margin-top: 20px
+            }
+
+            .section img {
+                width: 100%;
+                height: auto;
+                display: block
+            }
+
+            .text-block {
+                width: 100%;
+                gap: 10px
+            }
+
+            .text-block h2 {
+                font-size: 1.6rem
+            }
+
+            .text-block p {
+                font-size: 1rem;
+                line-height: 1.7
+            }
+
+            .footer-container {
+                padding: 40px 18px;
+                display: flex;
+                flex-direction: column;
+                gap: 40px
+            }
+
+            .footer-column {
+                width: 100%;
+                min-width: 0;
+                flex: none
+            }
+
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+                font-size: 16px
+            }
+
+            .contact-form button {
+                width: 100%;
+                min-height: 48px
+            }
+
+            .contact-info p {
+                overflow-wrap: anywhere
+            }
+
+            .hours-row {
+                width: 100%;
+                max-width: none;
+                gap: 15px
+            }
+
+            .payment-methods {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px
+            }
+
+            .payment-methods img {
+                max-width: 55px;
+                height: auto
+            }
+
+            .map-wrapper {
+                width: 100%;
+                aspect-ratio: 4/3
+            }
+
+            .map-wrapper iframe {
+                display: block;
+                width: 100% !important;
+                height: 100% !important;
+                border: 0
+            }
+        }
+
+        @media (max-width:480px) {
+            header {
+                padding: 7px 6px
+            }
+
+            header ul {
+                max-width: calc(100% - 48px);
+                padding: 0 4px
+            }
+
+            header li {
+                font-size: 12px;
+                padding: 9px 3px
+            }
+
+             header li a.main {
+                padding: 0 3px !important
+             }
+               .Search {
+                flex-basis: 38px;
+                width: 38px;
+                height: 38px
+            }
+
+            .Search:hover {
+                width: 38px;
+                height: 38px
+            }
+
+            .hero-image-block {
+                height: 55vh;
+                min-height: 360px
+            }
+
+            .hero-text-box {
+                width: calc(100% - 24px);
+                padding: 20px 12px
+            }
+
+            .hero-text-box h1 {
+                font-size: 2rem
+            }
+
+            .hero-text-box h2 {
+                font-size: .95rem
+            }
+
+            .banner {
+                padding: 25px 15px
+            }
+
+            .main-content {
+                padding-left: 15px;
+                padding-right: 15px
+            }
+
+            .section {
+                margin-top: 45px
+            }
+
+            .footer-container {
+                padding-left: 15px;
+                padding-right: 15px
+            }
+        }
+    </style>
+    <script>
+        function updateBusinessStatus() {
+            const statusElement = document.getElementById('live-status');
+            if (!statusElement) return;
+
+            // Fetch the live local date string customized to Minnesota Central Time Zone
+            const mnTimeStr = new Date().toLocaleString("en-US", {
+                timeZone: "America/Chicago"
+            });
+            const mnDate = new Date(mnTimeStr);
+
+            const currentDay = mnDate.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+            const currentHours = mnDate.getHours();
+            const currentMinutes = mnDate.getMinutes();
+
+            // Convert time into minutes from midnight for simpler math logic
+            const totalMinutes = (currentHours * 60) + currentMinutes;
+            const openTime = 8 * 60; // 8:00 AM in minutes
+            const closeTime = 17 * 60; // 5:00 PM in minutes
+
+            // Business Schedule check: Monday (1) through Friday (5)
+            if (currentDay >= 1 && currentDay <= 5) {
+                if (totalMinutes >= openTime && totalMinutes < closeTime) {
+                    statusElement.textContent = "Open Now";
+                    statusElement.className = "status-badge open";
+                } else {
+                    statusElement.textContent = "Closed";
+                    statusElement.className = "status-badge closed";
+                }
+            } else {
+                // Weekend Schedule: Saturday (6) and Sunday (0) are closed
+                statusElement.textContent = "Closed";
+                statusElement.className = "status-badge closed";
+            }
+        }
+
+        // Run the script instantly on load, then auto-refresh every 30 seconds
+        updateBusinessStatus();
+        setInterval(updateBusinessStatus, 30000);
+    </script>
+    
