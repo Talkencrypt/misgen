@@ -2,384 +2,577 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
 </head>
-<header>
-    <ul>
-        <li> 
-            <a style="margin-right:20px;"href="./index.html">Home</a> 
-        </li>
-        <li class="active"> 
-            <a class="active" href="./Contact.html">Contact</a> 
-        </li>
-        <li> 
-            <a href="https://maps.app.goo.gl/ksQsTseVc8YKjJ5J7">Directions</a> 
-        </li>
-    </ul>
-    <div class="Search">
-        <p class="search-bar"><span class="material-symbols-outlined"> search </span></p>
-        <p contenteditable="true" class="search"></p>
-    </div>
-</header>
-
 <body>
-  <!-- Footer Section Container -->
+<header>
+ <ul>
+ <li> 
+ <a style="margin-right:20px;"href="./Index.html">Home</a> 
+ </li>
+ <li class="active"> 
+ <a class="active" href="./Contact.html">Contact</a> 
+ </li>
+ <li> 
+ <a href="https://maps.app.goo.gl/ksQsTseVc8YKjJ5J7">Directions</a> 
+ </li>
+ </ul>
+ <a href="./PartsLookup.html" class="Search" aria-label="Vehicle Parts Lookup">
+ <span class="material-symbols-outlined">search</span>
+ </a>
+</header>
 <footer class="footer-container">
-        <!-- Column 1: Contact Form -->
-        <div class="footer-column">
-            <h3>CONTACT US</h3>
-            <!-- Remember to swap 'your_unique_id' with your actual formspree dashboard token -->
-            <form action="https://formspree.io" method="POST" class="contact-form">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="_replyto" placeholder="Your Email Address" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" rows="4" placeholder="How can we help you?" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
+ <div class="footer-column">
+ <h3>CONTACT US</h3>
+ <!-- Remember to swap 'your_unique_id' with your actual formspree dashboard token -->
+ <form action="https://formspree.io/f/xgaewbrw" method="POST" class="contact-form">
+ <div class="form-group">
+ <input type="text" name="name" placeholder="Your Name" required>
+ </div>
+ <div class="form-group">
+ <input type="email" name="_replyto" placeholder="Your Email Address" required>
+ </div>
+ <div class="form-group">
+ <textarea name="message" rows="4" placeholder="How can we help you?" required></textarea>
+ </div>
+ <button type="submit">Send Message</button>
+ </form>
+ </div>
 
-        <!-- Column 2: Detailed Business Contact Card -->
-        <div class="footer-column contact-info">
-            <h3>CONTACT INFORMATION</h3>
-            <p><strong>Phone:</strong> 800-358-4902 | 507-684-2100</p>
-            <p><strong>Email:</strong> <a href="mailto:b.misgen@misgen.com">b.misgen@misgen.com</a></p>
-            <p><strong>Address:</strong> 12880 SW 72nd Ave. Ellendale, MN 56026</p>
-            <p class="meta-tags">Licensed | Bonded | Insured</p>
+ <!-- Column 2: Detailed Business Contact Card -->
+ <div class="footer-column contact-info">
+ <h3>CONTACT INFORMATION</h3>
+ <p><strong>Phone:</strong> 800-358-4902 | 507-684-2100</p>
+ <p><strong>Email:</strong> <a href="mailto:b.misgen@misgen.com">b.misgen@misgen.com</a></p>
+ <p><strong>Address:</strong> 12880 SW 72nd Ave. Ellendale, MN 56026</p>
+ <p class="meta-tags">Licensed | Bonded | Insured</p>
 
-            <div class="hours-block">
-                <!-- Added a live-status span right next to the heading -->
-                <p><strong>Business Hours:</strong> <span id="live-status" class="status-badge">Checking...</span></p>
-                <div class="hours-row"><span>Mon - Fri</span><span>8:00 am - 5:00 pm</span></div>
-                <div class="hours-row"><span>Sat - Sun</span><span>Closed</span></div>
-            </div>
+ <div class="hours-block">
+ <!-- Added a live-status span right next to the heading -->
+ <p><strong>Business Hours:</strong> <span id="live-status" class="status-badge">Checking...</span></p>
+ <div class="hours-row"><span>Mon - Fri</span><span>8:00 am - 5:00 pm</span></div>
+ <div class="hours-row"><span>Sat - Sun</span><span>Closed</span></div>
+ </div>
 
 
-            <div class="payment-methods">
-                <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/visa.png" alt="Accepted Payments">
-                <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/mastercard.png" alt="Accepted Payments">
-                <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/discover.png" alt="Accepted Payments">
-                <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/amex.png" alt="Accepted Payments">
-                <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/paypal.png" alt="Accepted Payments">
-                <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/cash.png" alt="Accepted Payments">
-            </div>
-        </div>
+ <div class="payment-methods">
+ <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/visa.png" alt="Accepted Payments">
+ <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/mastercard.png" alt="Accepted Payments">
+ <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/discover.png" alt="Accepted Payments">
+ <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/amex.png" alt="Accepted Payments">
+ <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/paypal.png" alt="Accepted Payments">
+ <img src="https://cdn.website.thryv.com/-resellers-preview/_widget_builder_files/cash.png" alt="Accepted Payments">
+ </div>
+ </div>
 
-        <!-- Column 3: Live Interactive Map Embed -->
-        <div class="footer-column map-column">
-            <h3>OUR LOCATION</h3>
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2560.2385143838305!2d-93.3497141!3d43.9044371!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f6cf0989839733%3A0x4c6ef43d820b8cc1!2sMisgen%20Auto%20Parts!5e1!3m2!1sen!2sus!4v1786896472151!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </iframe>
-            </div>
-        </div>
-    </footer>
+ <!-- Column 3: Live Interactive Map Embed -->
+ <div class="footer-column map-column">
+ <h3>OUR LOCATION</h3>
+ <div class="map-wrapper">
+ <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2560.2385143838305!2d-93.3497141!3d43.9044371!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f6cf0989839733%3A0x4c6ef43d820b8cc1!2sMisgen%20Auto%20Parts!5e1!3m2!1sen!2sus!4v1786896472151!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+ </div>
+ </div>
+ </footer>
 
-</body>
 <style>
-    header {
-        justify-content: center;
-    }
+ header {
+ justify-content: center;
+ }
 
-    body {
-        Background: #0D1513;
-    }
+ body {
+ Background: #0D1513;
+ }
 
 
-    header {
-        position: sticky;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 100;
-        display: flex;
-        justify-content: center;
-        display: flex;
-    }
+ header {
+ position: sticky;
+ top: 0;
+ left: 0;
+ width: 100%;
+ z-index: 100;
+ display: flex;
+ justify-content: center;
+ display: flex;
+ }
 
-    body {
-        margin: 0;
-        padding: 0;
-    }
+ body {
+ margin: 0;
+ padding: 0;
+ }
 
-    ul {
-        background: #D1E7DD;
-        border-radius: 50px;
-        width: fit-content;
-        padding-right: 40px
-    }
+ ul {
+ background: #D1E7DD;
+ border-radius: 50px;
+ width: fit-content;
+ padding-right: 40px
+ }
 
-    .Search {
-        background: #D1E7DD;
-        border-radius: 100%;
-        width: fit-content;
-        padding: 23px;
-        Height: 20px;
-        margin-top: 14px;
-        margin-left: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+ .Search {
+ background: #D1E7DD;
+ border-radius: 100%;
+ width: fit-content;
+ padding: 23px;
+ Height: 20px;
+ margin-top: 14px;
+ margin-left: 20px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ }
 
-    .Search:hover {
-        background: #D1E7DD;
-        border-radius: 35px 35px 35px 35px;
-        width: fit-content;
-        padding: 23px;
-        Height: 20px;
-        margin-top: 14px;
-        margin-left: 20px
-    }
+ .Search:hover {
+ background: #D1E7DD;
+ border-radius: 35px 35px 35px 35px;
+ width: fit-content;
+ padding: 23px;
+ Height: 20px;
+ margin-top: 14px;
+ margin-left: 20px
+ }
 
-    .Search:hover p.search {
-        display: block;
-        padding: 0px;
-        border-color: #121212;
-        border-bottom-style: groove;
-    }
+ .Search:hover p.search {
+ display: block;
+ padding: 0px;
+ border-color: #121212;
+ border-bottom-style: groove;
+ }
 
-    [contenteditable="true"]:focus {
-        outline: none;
-        border: none;
-    }
+ [contenteditable="true"]:focus {
+ outline: none;
+ border: none;
+ }
 
-    li {
-        font-size: 20px;
-        display: inline-block;
-        padding-left: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
+ li {
+ font-size: 20px;
+ display: inline-block;
+ padding-left: 20px;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ }
 
-    .active {
-        padding: 0px;
-        border-color: #121212;
-        border-bottom-style: groove;
-    }
+ .active {
+ padding: 0px;
+ border-color: #121212;
+ border-bottom-style: groove;
+ }
 
-    a {
-        color: black;
-        text-decoration: none;
-    }
+ a {
+ color: black;
+ text-decoration: none;
+ }
 
-    a:hover {
-        padding: 0px;
-        border-color: #464646;
-        border-bottom-style: groove;
-        color: #464646;
-    }
+ a:hover {
+ padding: 0px;
+ border-color: #464646;
+ border-bottom-style: groove;
+ color: #464646;
+ }
 
-    .active {
-        color: black;
-    }
+ .active {
+ color: black;
+ }
 
-    .search-bar {
-        padding: 0px;
-        display: flex;
-        margin: 0;
-    }
+ .search-bar {
+ padding: 0px;
+ display: flex;
+ margin: 0;
+ }
 
-    .search-bar:hover {
-        padding: 0px;
-        display: flex;
-        justify-content: Left;
-        align-items: Left;
-        margin: 0;
-    }
+ .search-bar:hover {
+ padding: 0px;
+ display: flex;
+ justify-content: Left;
+ align-items: Left;
+ margin: 0;
+ }
 
-    .search {
-        margin: 0;
-        margin-left: 5px;
-        display: none;
-    }
+ .search {
+ margin: 0;
+ margin-left: 5px;
+ display: none;
+ }
 
-    .search:empty::before {
-        content: "Search...";
-        color: #000000;
-    }
+ .search:empty::before {
+ content: "Search...";
+ color: #000000;
+ }
 
-    p.search:focus:empty::before {
-        color: #cbd5e1;
-    }
-    /* Footer Structural Grid Layout */
+ p.search:focus:empty::before {
+ color: #cbd5e1;
+ }
+ /* Footer Structural Grid Layout */
 .footer-container {
-    background-color: #051424; /* Matching the deep dark blue theme */
-    color: #ffffff;
-    padding: 60px 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: space-between;
-    font-family: sans-serif;
+ background-color: #051424; /* Matching the deep dark blue theme */
+ color: #ffffff;
+ padding: 60px 40px;
+ display: flex;
+ flex-wrap: wrap;
+ gap: 40px;
+ justify-content: space-between;
+ font-family: sans-serif;
 }
 
 .footer-column {
-    flex: 1;
-    min-width: 280px; /* Ensures responsiveness across mobile devices */
+ flex: 1;
+ min-width: 280px; /* Ensures responsiveness across mobile devices */
 }
 
 .footer-column h3 {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
-    color: #ffffff;
-    border-bottom: 1px solid #1a314d;
-    padding-bottom: 10px;
+ font-size: 1.1rem;
+ letter-spacing: 1px;
+ margin-bottom: 25px;
+ color: #ffffff;
+ border-bottom: 1px solid #1a314d;
+ padding-bottom: 10px;
 }
 
 /* Formspree Elements Custom Styling */
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+ display: flex;
+ flex-direction: column;
+ gap: 15px;
 }
 
 .form-group input, 
 .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    background-color: #0c223c;
-    border: 1px solid #1e3a5f;
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 0.95rem;
-    box-sizing: border-box;
+ width: 100%;
+ padding: 12px;
+ background-color: #0c223c;
+ border: 1px solid #1e3a5f;
+ border-radius: 4px;
+ color: #ffffff;
+ font-size: 0.95rem;
+ box-sizing: border-box;
 }
 
 .form-group input::placeholder, 
 .form-group textarea::placeholder {
-    color: #728aa1;
+ color: #728aa1;
 }
 
 .form-group input:focus, 
 .form-group textarea:focus {
-    outline: none;
-    border-color: #3b82f6; /* Accent blue glow focus status */
+ outline: none;
+ border-color: #3b82f6; /* Accent blue glow focus status */
 }
 
 .contact-form button {
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s ease-in-out;
+ background-color: #2563eb;
+ color: white;
+ border: none;
+ padding: 12px 20px;
+ font-size: 1rem;
+ font-weight: bold;
+ border-radius: 4px;
+ cursor: pointer;
+ transition: background 0.2s ease-in-out;
 }
 
 .contact-form button:hover {
-    background-color: #1d4ed8;
+ background-color: #1d4ed8;
 }
 
 /* Middle Contact Info Typography Styles */
 .contact-info p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 12px 0;
-    color: #cbd5e1;
+ font-size: 0.95rem;
+ line-height: 1.6;
+ margin: 12px 0;
+ color: #cbd5e1;
 }
 
 .contact-info a {
-    color: #3b82f6;
-    text-decoration: none;
+ color: #3b82f6;
+ text-decoration: none;
 }
 
 .contact-info a:hover {
-    text-decoration: underline;
+ text-decoration: underline;
 }
 
 .meta-tags {
-    font-style: italic;
-    color: #94a3b8;
+ font-style: italic;
+ color: #94a3b8;
 }
 
 .hours-block {
-    margin-top: 20px;
+ margin-top: 20px;
 }
 
 .hours-row {
-    display: flex;
-    justify-content: space-between;
-    max-width: 250px;
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-    color: #cbd5e1;
+ display: flex;
+ justify-content: space-between;
+ max-width: 250px;
+ font-size: 0.9rem;
+ margin-bottom: 6px;
+ color: #cbd5e1;
 }
 
 .payment-methods {
-    margin-top: 25px;
+ margin-top: 25px;
 }
 
 /* Right-most Embedded Map Rules */
 .map-wrapper {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-    overflow: hidden;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+ border-radius: 4px;
+ overflow: hidden;
 }
  .status-badge {
-            font-size: 0.85rem;
-            font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 12px;
-            margin-left: 8px;
-            text-transform: uppercase;
-        }
+ font-size: 0.85rem;
+ font-weight: bold;
+ padding: 3px 8px;
+ border-radius: 12px;
+ margin-left: 8px;
+ text-transform: uppercase;
+ }
 
-        /* Green design block when open */
-        .status-badge.open {
-            background-color: #157347;
-            color: #ffffff;
-        }
+ /* Green design block when open */
+ .status-badge.open {
+ background-color: #157347;
+ color: #ffffff;
+ }
 
-        /* Red design block when closed */
-        .status-badge.closed {
-            background-color: #bb2d3b;
-            color: #ffffff;
-        }
+ /* Red design block when closed */
+ .status-badge.closed {
+ background-color: #bb2d3b;
+ color: #ffffff;
+ }
+
+
+ /* =========================
+ Mobile Responsive Layout
+ ========================= */
+
+ * {
+ box-sizing: border-box;
+ }
+
+ html,
+ body {
+ width: 100%;
+ max-width: 100%;
+ overflow-x: hidden;
+ }
+
+ img,
+ iframe {
+ max-width: 100%;
+ }
+
+ @media (max-width: 768px) {
+
+ /* Header */
+ header {
+ position: sticky;
+ top: 0;
+ width: 100%;
+ padding: 8px 10px;
+ justify-content: center;
+ align-items: center;
+ background: rgba(13, 21, 19, 0.96);
+ }
+
+ header ul {
+ margin: 0;
+ padding: 0 8px;
+ width: auto;
+ max-width: calc(100% - 55px);
+ border-radius: 30px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ flex: 1;
+ }
+
+ header li {
+ display: block;
+ padding: 10px 6px;
+ font-size: 14px;
+ white-space: nowrap;
+ }
+
+ header li a {
+ margin-right: 0 !important;
+ padding: 0 5px !important;
+ }
+
+ .Search {
+ flex: 0 0 42px;
+ width: 42px;
+ height: 42px;
+ padding: 0;
+ margin: 0 0 0 7px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ }
+
+ .Search:hover {
+ width: 42px;
+ height: 42px;
+ padding: 0;
+ margin: 0 0 0 7px;
+ border-radius: 100%;
+ }
+
+ .Search .material-symbols-outlined {
+ font-size: 22px;
+ }
+
+ /* Footer layout */
+ .footer-container {
+ width: 100%;
+ padding: 40px 18px;
+ display: flex;
+ flex-direction: column;
+ gap: 40px;
+ }
+
+ .footer-column {
+ width: 100%;
+ min-width: 0;
+ flex: none;
+ }
+
+ .footer-column h3 {
+ font-size: 1rem;
+ margin-bottom: 18px;
+ }
+
+ /* Contact form */
+ .contact-form {
+ width: 100%;
+ }
+
+ .form-group input,
+ .form-group textarea {
+ width: 100%;
+ max-width: 100%;
+ font-size: 16px;
+ }
+
+ .contact-form button {
+ width: 100%;
+ min-height: 48px;
+ }
+
+ /* Contact information */
+ .contact-info p {
+ font-size: 0.95rem;
+ overflow-wrap: anywhere;
+ }
+
+ .hours-row {
+ width: 100%;
+ max-width: none;
+ gap: 15px;
+ }
+
+ /* Payment icons */
+ .payment-methods {
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ gap: 10px;
+ }
+
+ .payment-methods img {
+ max-width: 55px;
+ height: auto;
+ }
+
+ /* Responsive map */
+ .map-wrapper {
+ width: 100%;
+ aspect-ratio: 4 / 3;
+ }
+
+ .map-wrapper iframe {
+ display: block;
+ width: 100% !important;
+ height: 100% !important;
+ border: 0;
+ }
+ }
+
+ @media (max-width: 480px) {
+
+ header {
+ padding: 7px 6px;
+ }
+
+ header ul {
+ max-width: calc(100% - 48px);
+ padding: 0 4px;
+ }
+
+ header li {
+ font-size: 12px;
+ padding: 9px 3px;
+ }
+
+ header li a {
+ padding: 0 3px !important;
+ }
+
+ .Search {
+ flex-basis: 38px;
+ width: 38px;
+ height: 38px;
+ }
+
+ .Search:hover {
+ width: 38px;
+ height: 38px;
+ }
+
+ .footer-container {
+ padding-left: 15px;
+ padding-right: 15px;
+ }
+
+ .hours-row {
+ font-size: 0.85rem;
+ }
+ }
 
 </style>
-  <script>
+ <script>
 function updateBusinessStatus() {
-    const statusElement = document.getElementById('live-status');
-    if (!statusElement) return;
+ const statusElement = document.getElementById('live-status');
+ if (!statusElement) return;
 
-    // Fetch the live local date string customized to Minnesota Central Time Zone
-    const mnTimeStr = new Date().toLocaleString("en-US", {timeZone: "America/Chicago"});
-    const mnDate = new Date(mnTimeStr);
+ // Fetch the live local date string customized to Minnesota Central Time Zone
+ const mnTimeStr = new Date().toLocaleString("en-US", {timeZone: "America/Chicago"});
+ const mnDate = new Date(mnTimeStr);
 
-    const currentDay = mnDate.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
-    const currentHours = mnDate.getHours();
-    const currentMinutes = mnDate.getMinutes();
-    
-    // Convert time into minutes from midnight for simpler math logic
-    const totalMinutes = (currentHours * 60) + currentMinutes;
-    const openTime = 8 * 60;   // 8:00 AM in minutes
-    const closeTime = 17 * 60; // 5:00 PM in minutes
+ const currentDay = mnDate.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+ const currentHours = mnDate.getHours();
+ const currentMinutes = mnDate.getMinutes();
+ 
+ // Convert time into minutes from midnight for simpler math logic
+ const totalMinutes = (currentHours * 60) + currentMinutes;
+ const openTime = 8 * 60; // 8:00 AM in minutes
+ const closeTime = 17 * 60; // 5:00 PM in minutes
 
-    // Business Schedule check: Monday (1) through Friday (5)
-    if (currentDay >= 1 && currentDay <= 5) {
-        if (totalMinutes >= openTime && totalMinutes < closeTime) {
-            statusElement.textContent = "Open Now";
-            statusElement.className = "status-badge open";
-        } else {
-            statusElement.textContent = "Closed";
-            statusElement.className = "status-badge closed";
-        }
-    } else {
-        // Weekend Schedule: Saturday (6) and Sunday (0) are closed
-        statusElement.textContent = "Closed";
-        statusElement.className = "status-badge closed";
-    }
+ // Business Schedule check: Monday (1) through Friday (5)
+ if (currentDay >= 1 && currentDay <= 5) {
+ if (totalMinutes >= openTime && totalMinutes < closeTime) {
+ statusElement.textContent = "Open Now";
+ statusElement.className = "status-badge open";
+ } else {
+ statusElement.textContent = "Closed";
+ statusElement.className = "status-badge closed";
+ }
+ } else {
+ // Weekend Schedule: Saturday (6) and Sunday (0) are closed
+ statusElement.textContent = "Closed";
+ statusElement.className = "status-badge closed";
+ }
 }
 
 // Run the script instantly on load, then auto-refresh every 30 seconds
@@ -387,4 +580,5 @@ updateBusinessStatus();
 setInterval(updateBusinessStatus, 30000);
 </script>
 
+</body>
 </html>
